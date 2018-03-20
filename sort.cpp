@@ -50,7 +50,7 @@ int main()
  
    cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
 	
-	if(input=='#')
+	if(input='#')
 	{	cout<<endl<<endl;
 		cout<<"The program will now sort the inputs in ascending order.";
 		sort(inputs);
