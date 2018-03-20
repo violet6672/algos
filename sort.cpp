@@ -5,19 +5,19 @@
 
 using namespace std;
 
-int sort(auto &data)
+void sort(auto &data)
 {
 	int i,d;
-	int temp;
-	for(i=1;i=data.size();i++)
+	string temp;
+	for(i=1;i<data.size();i++)
 	{
-		for (d=1;d=data.size();d++)
+		for (d=i+1;d<data.size();d++)
 		{ 
-			if (data[i-1]>data[i])
+			if (data[d-1]>data[d])
 			{
-				temp=data[i];
-				data[i]=data[i-1];
-				data[i-1]=temp;
+				temp=data[d];
+				data[d]=data[d-1];
+				data[d-1]=temp;
 			}
 		}
 	}
@@ -27,6 +27,7 @@ int main()
 {
   vector<string> inputs;
   string input;
+	int e;
 
    cout<<"Welcome to \"sort it\". We first need some input data."<<endl;
    cout<<"We'll assume the inputs do not have any spaces."<<endl<<endl;
@@ -48,15 +49,17 @@ int main()
        exit(1);//nothing to do but quit program
   }
  
-   cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
 	
-	if(input='#')
+	if(input=="#")
 	{	cout<<endl<<endl;
 		cout<<"The program will now sort the inputs in ascending order.";
 		sort(inputs);
 	}
 	
- 
+	for (e=0;e<inputs.size();e++)
+	{
+		cout<<inputs[e]; 
+	}
 	cout<<endl<<"Program \"sort it\" is now finished."<<endl<<endl;
 
     return 0;
